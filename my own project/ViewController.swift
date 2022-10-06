@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var minutesSliderText: UISlider!
     
     @IBAction func minutesSlider(_ sender: UISlider) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+        otherMinutes.resignFirstResponder()
+        otherSeconds.resignFirstResponder()
         sender.setValue(sender.value.rounded(.down), animated: true)
         let valueToInt = Int(minutesSliderText.value)
         minutes.text = String(valueToInt)
@@ -28,6 +32,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondsSliderText: UISlider!
     
     @IBAction func secondsSlider(_ sender: UISlider) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+        otherMinutes.resignFirstResponder()
+        otherSeconds.resignFirstResponder()
         sender.setValue(sender.value.rounded(.down), animated: true)
         let valueToInt = Int(secondsSliderText.value)
         seconds.text = String(valueToInt)
@@ -72,6 +80,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var Output: UILabel!
   
     @IBAction func Add(_ sender: UIButton) {
+        
+        var g = 07
+        print(g)
         minutes.resignFirstResponder()
         seconds.resignFirstResponder()
         otherMinutes.resignFirstResponder()
@@ -118,12 +129,33 @@ class ViewController: UIViewController {
                 }
                 
                 if addedMins >= 60{
-                    Output.text = (String(extraHours) + ":" + String(remainingMins) + ":" + String(remainingSecs))
-                    print(extraHours, remainingMins, remainingSecs)
+                    if remainingMins < 10 && remainingSecs < 10{
+                        Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":0" + String(remainingSecs))
+                        print(extraHours, remainingMins, remainingSecs)
+                    }
+                    if remainingMins < 10 && remainingSecs >= 10{
+                        Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":" + String(remainingSecs))
+                        print(extraHours, remainingMins, remainingSecs)
+                    }
+                    if remainingMins >= 10 && remainingSecs < 10{
+                        Output.text = (String(extraHours) + ":" + String(remainingMins) + ":0" + String(remainingSecs))
+                        print(extraHours, remainingMins, remainingSecs)
+                    }
+                    if remainingMins >= 10 && remainingSecs >= 10{
+                        Output.text = (String(extraHours) + ":" + String(remainingMins) + ":" + String(remainingSecs))
+                        print(extraHours, remainingMins, remainingSecs)
+                    }
                 }
                 else{
-                    Output.text = (String(remainingMins) + ":" + String(remainingSecs))
-                    print(remainingMins, remainingSecs)
+                    if remainingSecs >= 10{
+                        Output.text = (String(remainingMins) + ":" + String(remainingSecs))
+                        print(remainingMins, remainingSecs)
+                    }
+                    else{
+                        Output.text = (String(remainingMins) + ":0" + String(remainingSecs))
+                        print(remainingMins, remainingSecs)
+                    }
+                    
                 }
             }
         }
