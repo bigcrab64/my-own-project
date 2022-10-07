@@ -41,7 +41,7 @@ class AddTimeViewController: UIViewController {
  
     @IBOutlet weak var Output: UILabel!
   
-    var toLog = ["entryNumber": [1, 2, 3]]
+    var toLog = ["entryNumber": Int[]]
     var entryCounter = 0
     
     
@@ -94,33 +94,47 @@ class AddTimeViewController: UIViewController {
                     if remainingMins < 10 && remainingSecs < 10{
                         Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":0" + String(remainingSecs))
                         
-                        
-                        
-                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
                         
                         print(extraHours, remainingMins, remainingSecs)
     
                     }
                     if remainingMins < 10 && remainingSecs >= 10{
                         Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":" + String(remainingSecs))
+                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
+                        
                         print(extraHours, remainingMins, remainingSecs)
                     }
                     if remainingMins >= 10 && remainingSecs < 10{
                         Output.text = (String(extraHours) + ":" + String(remainingMins) + ":0" + String(remainingSecs))
+                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
+                        
                         print(extraHours, remainingMins, remainingSecs)
                     }
                     if remainingMins >= 10 && remainingSecs >= 10{
                         Output.text = (String(extraHours) + ":" + String(remainingMins) + ":" + String(remainingSecs))
+                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
+                        
                         print(extraHours, remainingMins, remainingSecs)
                     }
                 }
                 else{
                     if remainingSecs >= 10{
                         Output.text = (String(remainingMins) + ":" + String(remainingSecs))
+                        
+                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [remainingMins, remainingSecs]
+                        
                         print(remainingMins, remainingSecs)
                     }
                     else{
                         Output.text = (String(remainingMins) + ":0" + String(remainingSecs))
+                        
+                        toLog[("EntryNumber" + String(entryCounter))] = [remainingMins, remainingSecs]
+                        
                         print(remainingMins, remainingSecs)
                     }
                 print(toLog)
