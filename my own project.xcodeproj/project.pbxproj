@@ -16,6 +16,7 @@
 		F73D552C28CF931A002C7971 /* my_own_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D552B28CF931A002C7971 /* my_own_projectTests.swift */; };
 		F73D553628CF931A002C7971 /* my_own_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D553528CF931A002C7971 /* my_own_projectUITests.swift */; };
 		F73D553828CF931A002C7971 /* my_own_projectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D553728CF931A002C7971 /* my_own_projectUITestsLaunchTests.swift */; };
+		F742C62128EF3E8D00E6B157 /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742C62028EF3E8D00E6B157 /* AddTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F73D553128CF931A002C7971 /* my own projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "my own projectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73D553528CF931A002C7971 /* my_own_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_own_projectUITests.swift; sourceTree = "<group>"; };
 		F73D553728CF931A002C7971 /* my_own_projectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_own_projectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F742C62028EF3E8D00E6B157 /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F73D551628CF9319002C7971 /* SceneDelegate.swift */,
 				F73D551828CF9319002C7971 /* ViewController.swift */,
 				F73D551A28CF9319002C7971 /* Main.storyboard */,
+				F742C62028EF3E8D00E6B157 /* AddTimeViewController.swift */,
 				F73D551D28CF931A002C7971 /* Assets.xcassets */,
 				F73D551F28CF931A002C7971 /* LaunchScreen.storyboard */,
 				F73D552228CF931A002C7971 /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F73D551928CF9319002C7971 /* ViewController.swift in Sources */,
+				F742C62128EF3E8D00E6B157 /* AddTimeViewController.swift in Sources */,
 				F73D551528CF9319002C7971 /* AppDelegate.swift in Sources */,
 				F73D551728CF9319002C7971 /* SceneDelegate.swift in Sources */,
 			);
