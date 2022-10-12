@@ -92,33 +92,8 @@ class AddTimeViewController: UIViewController {
                     remainingMins = addedMins
                 }
                 
-                if addedMins >= 60{
-                    if remainingMins < 10 && remainingSecs < 10{
-                        Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":0" + String(remainingSecs))
-                    }
-                    
-                    if remainingMins < 10 && remainingSecs >= 10{
-                        Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":" + String(remainingSecs))
-                    }
-                    
-                    if remainingMins >= 10 && remainingSecs < 10{
-                        Output.text = (String(extraHours) + ":" + String(remainingMins) + ":0" + String(remainingSecs))
-                    }
-                    
-                    if remainingMins >= 10 && remainingSecs >= 10{
-                        Output.text = (String(extraHours) + ":" + String(remainingMins) + ":" + String(remainingSecs))
-                    }
-                }
-                else{
-                    if remainingSecs >= 10{
-                        Output.text = (String(remainingMins) + ":" + String(remainingSecs))
-                    }
-                    
-                    else{
-                        Output.text = (String(remainingMins) + ":0" + String(remainingSecs))
-                     }
-                }
-               let newTime = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: extraHours, minutes: remainingMins, seconds: remainingSecs)
+                toTextLabel(label: Output, hours: extraHours, minutes: remainingMins, seconds: remainingSecs)
+                let newTime = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: extraHours, minutes: remainingMins, seconds: remainingSecs)
                 
                 timeStamps.append(newTime)
                 print(timeStamps[entryCounter].entryNumber)

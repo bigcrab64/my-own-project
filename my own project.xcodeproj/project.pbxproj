@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F7241FD528F08F77006A99B9 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7241FD428F08F77006A99B9 /* TimeTableViewController.swift */; };
-		F733BA3F28F7188700DB1CFF /* TimeStampClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733BA3E28F7188700DB1CFF /* TimeStampClass.swift */; };
+		F733BA3F28F7188700DB1CFF /* ClassesAndFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733BA3E28F7188700DB1CFF /* ClassesAndFunctions.swift */; };
 		F73D551528CF9319002C7971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D551428CF9319002C7971 /* AppDelegate.swift */; };
 		F73D551728CF9319002C7971 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D551628CF9319002C7971 /* SceneDelegate.swift */; };
 		F73D551C28CF9319002C7971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73D551A28CF9319002C7971 /* Main.storyboard */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		F7241FD428F08F77006A99B9 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
-		F733BA3E28F7188700DB1CFF /* TimeStampClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampClass.swift; sourceTree = "<group>"; };
+		F733BA3E28F7188700DB1CFF /* ClassesAndFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesAndFunctions.swift; sourceTree = "<group>"; };
 		F73D551128CF9319002C7971 /* my own project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my own project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73D551428CF9319002C7971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73D551628CF9319002C7971 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				F7241FD428F08F77006A99B9 /* TimeTableViewController.swift */,
-				F733BA3E28F7188700DB1CFF /* TimeStampClass.swift */,
+				F733BA3E28F7188700DB1CFF /* ClassesAndFunctions.swift */,
 				F73D551328CF9319002C7971 /* my own project */,
 				F73D552A28CF931A002C7971 /* my own projectTests */,
 				F73D553428CF931A002C7971 /* my own projectUITests */,
@@ -268,7 +268,7 @@
 				F73D551528CF9319002C7971 /* AppDelegate.swift in Sources */,
 				F73D551728CF9319002C7971 /* SceneDelegate.swift in Sources */,
 				F7241FD528F08F77006A99B9 /* TimeTableViewController.swift in Sources */,
-				F733BA3F28F7188700DB1CFF /* TimeStampClass.swift in Sources */,
+				F733BA3F28F7188700DB1CFF /* ClassesAndFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
