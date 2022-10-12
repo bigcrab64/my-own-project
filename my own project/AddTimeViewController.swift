@@ -8,10 +8,10 @@
 import UIKit
 
 class AddTimeViewController: UIViewController {
-
+    
     
     /*
-     //MARK: FIRST INPUT
+     //MARK: INPUT
      */
     @IBOutlet weak var minutes: UITextField!
     
@@ -38,14 +38,16 @@ class AddTimeViewController: UIViewController {
         seconds.text = String(valueToInt)
     }
     
- 
+ //MARK: VARIABLES N STUFF
     @IBOutlet weak var Output: UILabel!
-  
+
+    var timeStamps: [TimeStamp] = []
+
     var toLog:[String: Array] = ["entryNumber": [1,2,3]]
-    var entryCounter = 0
+    var entryCounter = -1
     
     
-    
+    //MARK: ADD BUTTON
     @IBAction func Add(_ sender: UIButton) {
         
         minutes.resignFirstResponder()
@@ -93,58 +95,43 @@ class AddTimeViewController: UIViewController {
                 if addedMins >= 60{
                     if remainingMins < 10 && remainingSecs < 10{
                         Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":0" + String(remainingSecs))
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
-                        
-                        
-                        print(extraHours, remainingMins, remainingSecs)
-    
                     }
+                    
                     if remainingMins < 10 && remainingSecs >= 10{
                         Output.text = (String(extraHours) + ":0" + String(remainingMins) + ":" + String(remainingSecs))
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
-                        
-                        print(extraHours, remainingMins, remainingSecs)
                     }
+                    
                     if remainingMins >= 10 && remainingSecs < 10{
                         Output.text = (String(extraHours) + ":" + String(remainingMins) + ":0" + String(remainingSecs))
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
-                        
-                        print(extraHours, remainingMins, remainingSecs)
                     }
+                    
                     if remainingMins >= 10 && remainingSecs >= 10{
                         Output.text = (String(extraHours) + ":" + String(remainingMins) + ":" + String(remainingSecs))
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [extraHours, remainingMins, remainingSecs]
-                        
-                        print(extraHours, remainingMins, remainingSecs)
                     }
                 }
                 else{
                     if remainingSecs >= 10{
                         Output.text = (String(remainingMins) + ":" + String(remainingSecs))
-                        
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [remainingMins, remainingSecs]
-                        
-                        print(remainingMins, remainingSecs)
                     }
+                    
                     else{
                         Output.text = (String(remainingMins) + ":0" + String(remainingSecs))
-                        
-                        toLog[("Entry: " + String(entryCounter))] = [remainingMins, remainingSecs]
-                        
-                        print(remainingMins, remainingSecs)
-                    }
+                     }
                 }
-
+               let newTime = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: extraHours, minutes: remainingMins, seconds: remainingSecs)
+                
+                timeStamps.append(newTime)
+                print(timeStamps[entryCounter].entryNumber)
             }
-            print(toLog)
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! TimeTableViewController
+        nvc.timeStamps = timeStamps
+    }
+    @IBAction func toTable(_ sender: UIButton) {
+    }
     
     
     override func viewDidLoad() {
