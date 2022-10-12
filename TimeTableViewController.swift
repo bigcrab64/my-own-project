@@ -9,7 +9,7 @@ import UIKit
 
 class TimeTableViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var Table: UITableView!
-
+    
     var timeStamps: [TimeStamp] = []
     
     
@@ -19,9 +19,9 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
     }
     
     func tableView(_ Table: UITableView, numberOfRowsInSection section: Int) -> Int {
-       timeStamps.count
+        timeStamps.count
     }
-  
+    
     func tableView(_ Table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Table.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         let currentItem = timeStamps[indexPath.row]
@@ -29,15 +29,15 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
             if currentItem.minutes < 10 && currentItem.seconds < 10{
                 cell.textLabel?.text = (String(currentItem.hours) + ":0" + String(currentItem.minutes) + ":0" + String(currentItem.seconds))
             }
-                
+            
             if currentItem.minutes < 10 && currentItem.seconds >= 10{
                 cell.textLabel?.text = (String(currentItem.hours) + ":0" + String(currentItem.minutes) + ":" + String(currentItem.seconds))
             }
-                
+            
             if currentItem.minutes >= 10 && currentItem.seconds < 10{
                 cell.textLabel?.text = (String(currentItem.hours) + ":" + String(currentItem.minutes) + ":0" + String(currentItem.seconds))
             }
-                
+            
             if currentItem.minutes >= 10 && currentItem.seconds >= 10{
                 cell.textLabel?.text = (String(currentItem.hours) + ":" + String(currentItem.minutes) + ":" + String(currentItem.seconds))
             }
@@ -46,46 +46,16 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
             if currentItem.seconds >= 10{
                 cell.textLabel?.text = (String(currentItem.minutes) + ":" + String(currentItem.seconds))
             }
-                
+            
             else{
                 cell.textLabel?.text = (String(currentItem.minutes) + ":0" + String(currentItem.seconds))
-                 }
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        }
-        else{
-            cell.textLabel?.text = (String(currentItem.minutes) + ":" + String(currentItem.seconds))
         }
         
         return cell
     }
+    
 }
-   
-
     /*
     // MARK: - Navigation
 
