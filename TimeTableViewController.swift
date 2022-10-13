@@ -31,6 +31,7 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
         Table.dataSource = self
     }
     
+    
     func tableView(_ Table: UITableView, numberOfRowsInSection section: Int) -> Int {
         timeStamps.count
     }

@@ -38,9 +38,55 @@ class AddTimeViewController: UIViewController {
         seconds.text = String(valueToInt)
     }
     
- //MARK: VARIABLES N STUFF
-    @IBOutlet weak var Output: UILabel!
+    
+    @IBAction func resignButton1(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    
+    @IBAction func resignButton2(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    
+    
+    @IBAction func resignButton3(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
 
+    @IBAction func resignButton4(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    @IBAction func resignButton5(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    
+    @IBAction func resignButton6(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    
+    @IBAction func resignButton7(_ sender: UIButton) {
+        minutes.resignFirstResponder()
+        seconds.resignFirstResponder()
+    }
+    
+    
+    
+    
+    
+ //MARK: VARIABLES N STUFF
+    
+    @IBOutlet weak var Output: UILabel!
+    
     var timeStamps: [TimeStamp] = []
     var timeTotal = total(hours: 0, minutes: 0, seconds: 0)
     
