@@ -65,3 +65,35 @@ func toTextLabel(label: UILabel, hours: Int, minutes: Int, seconds: Int){
         }
     }
 }
+
+func addToTotal(time: TimeStamp, currentTotal: total){
+    let hours = time.hours
+    let minutes = time.minutes
+    let seconds = time.seconds
+    
+    var extraMinutes = 0
+ 
+    
+    var extraHours = 0
+
+    let addedSecs = seconds + currentTotal.seconds
+    if addedSecs >= 60{
+        extraMinutes = addedSecs / 60 //add this to minutes later
+        currentTotal.seconds = addedSecs % 60 // this is final amount of seconds
+    }
+    else{
+        currentTotal.seconds = addedSecs
+    }
+    
+    
+    let addedMins = minutes + extraMinutes + currentTotal.minutes
+    if addedMins >= 60{
+        extraHours = addedMins / 60
+        currentTotal.minutes = addedMins % 60
+    }
+    else{
+        currentTotal.minutes = addedMins
+    }
+    currentTotal.hours += extraHours + hours
+}
+

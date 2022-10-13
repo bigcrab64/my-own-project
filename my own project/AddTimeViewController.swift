@@ -42,7 +42,8 @@ class AddTimeViewController: UIViewController {
     @IBOutlet weak var Output: UILabel!
 
     var timeStamps: [TimeStamp] = []
-
+    var timeTotal = total(hours: 0, minutes: 0, seconds: 0)
+    
     var toLog:[String: Array] = ["entryNumber": [1,2,3]]
     var entryCounter = -1
     
@@ -82,7 +83,6 @@ class AddTimeViewController: UIViewController {
                     remainingSecs = addedSecs
                 }
                 
-                
                 var addedMins = thing1! + extraMinutes
                 if addedMins >= 60{
                     extraHours = addedMins / 60
@@ -96,14 +96,22 @@ class AddTimeViewController: UIViewController {
                 let newTime = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: extraHours, minutes: remainingMins, seconds: remainingSecs)
                 
                 timeStamps.append(newTime)
-                print(timeStamps[entryCounter].entryNumber)
+                addToTotal(time: newTime, currentTotal: timeTotal)
+                
+                
+                
+                //print(timeStamps[entryCounter].entryNumber)
             }
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! TimeTableViewController
         nvc.timeStamps = timeStamps
+        nvc.totalTime = timeTotal
+        
+        
     }
     @IBAction func toTable(_ sender: UIButton) {
     }
