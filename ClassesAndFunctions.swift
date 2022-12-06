@@ -95,5 +95,6 @@ func addToTotal(time: TimeStamp, currentTotal: total){
         currentTotal.minutes = addedMins
     }
     currentTotal.hours += extraHours + hours
+    
 }
 

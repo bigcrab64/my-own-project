@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TimeTableViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var Table: UITableView!
@@ -15,20 +16,32 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
     
     
     
-    var timeStamps: [TimeStamp] = []
     
-    var totalTime = total(hours: 0, minutes: 0, seconds: 0)
     
+    @IBAction func saveButton(_ sender: UIButton) {
+        UserDefaults.standard.setValue(timeStamps, forKey: "huh")
+        print(UserDefaults.standard.value(forKey: "huh") ?? [])
+        
+        //print(type(of: timeStamps))
+        print(timeStamps)
+    }
+    
+    
+    
+    var TableInfo: Array = (UserDefaults.standard.array(forKey: "huh") ?? [])
 
     
     
+    var timeStamps: [TimeStamp] = []
     
+    var totalTime = total(hours: 0, minutes: 0, seconds: 0)
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Table.dataSource = self
+        //print(TableInfo)
     }
     
     

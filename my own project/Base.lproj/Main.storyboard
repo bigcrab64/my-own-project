@@ -231,7 +231,7 @@
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.99238885310000002" green="0.67872397179999999" blue="0.98155437180000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="textColor" red="0.74645293138282831" green="0.50673411918488964" blue="0.74140392703761082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -246,6 +246,15 @@
                                 <color key="textColor" red="0.99238885310000002" green="0.67872397179999999" blue="0.98155437180000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-g0-UrI">
+                                <rect key="frame" x="157" y="721" width="101" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save Data"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Pxw-At-ZCV" eventType="touchUpInside" id="fMF-zy-5eO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9vQ-5t-PYc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

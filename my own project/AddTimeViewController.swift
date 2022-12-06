@@ -78,10 +78,7 @@ class AddTimeViewController: UIViewController {
         minutes.resignFirstResponder()
         seconds.resignFirstResponder()
     }
-    
-    
-    
-    
+   
     
  //MARK: VARIABLES N STUFF
     
@@ -145,8 +142,6 @@ class AddTimeViewController: UIViewController {
                 addToTotal(time: newTime, currentTotal: timeTotal)
                 
                 
-                
-                //print(timeStamps[entryCounter].entryNumber)
             }
         }
     }
