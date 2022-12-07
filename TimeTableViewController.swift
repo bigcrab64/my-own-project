@@ -19,22 +19,31 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
     
     
     @IBAction func saveButton(_ sender: UIButton) {
-        UserDefaults.standard.setValue(timeStamps, forKey: "huh")
-        print(UserDefaults.standard.value(forKey: "huh") ?? [])
+        
+        
+       // UserDefaults.standard.set(timeStamps, forKey: "huh")
+        //print(UserDefaults.standard.value(forKey: "huh")!)
         
         //print(type(of: timeStamps))
-        print(timeStamps)
+        //print(timeStamps)
     }
     
     
     
-    var TableInfo: Array = (UserDefaults.standard.array(forKey: "huh") ?? [])
-
+    let TableInfo: Array = (UserDefaults.standard.array(forKey: "huh") ?? [])
     
     
     var timeStamps: [TimeStamp] = []
     
     var totalTime = total(hours: 0, minutes: 0, seconds: 0)
+    
+    
+   /* static var getAllObjects: [TimeStamp]{
+        let defaultObject = TimeStamp(entryNumber: "Entry: -1", hours: 0 ?? 0, minutes: Int ?? 0, seconds: Int ?? 0)
+
+    }*/
+    
+    
     
     
     
@@ -46,19 +55,26 @@ class TimeTableViewController: UIViewController, UITableViewDataSource{
     
     
     func tableView(_ Table: UITableView, numberOfRowsInSection section: Int) -> Int {
-        timeStamps.count
+        timeStamps.count - 1
     }
+    
     
     func tableView(_ Table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Table.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        let currentTime = timeStamps[indexPath.row]
-        Table.dataSource = self
         
-        toTextLabel(label: totalLabel, hours: totalTime.hours, minutes: totalTime.minutes, seconds: totalTime.seconds)
-        
-        toTextLabel(label: cell.textLabel!, hours: currentTime.hours, minutes: currentTime.minutes, seconds: currentTime.seconds)
-       
+        if timeStamps.count == 1 {
+            
+            
+        }
+        else{
+            let currentTime = timeStamps[indexPath.row]
+            Table.dataSource = self
+            
+            toTextLabel(label: totalLabel, hours: totalTime.hours, minutes: totalTime.minutes, seconds: totalTime.seconds)
+            toTextLabel(label: cell.textLabel!, hours: currentTime.hours, minutes: currentTime.minutes, seconds: currentTime.seconds)
+        }
         return cell
+
     }
     
 }

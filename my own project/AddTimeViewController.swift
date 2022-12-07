@@ -90,7 +90,6 @@ class AddTimeViewController: UIViewController {
     var toLog:[String: Array] = ["entryNumber": [1,2,3]]
     var entryCounter = -1
     
-    
     //MARK: ADD BUTTON
     @IBAction func Add(_ sender: UIButton) {
         
@@ -106,6 +105,7 @@ class AddTimeViewController: UIViewController {
                 Output.text = "Inputs can not exceed 3 digits"
             }
             else{
+                
                 entryCounter += 1
                 var thing1 = Int(minutes.text ?? "")
                 var thing2 = Int(seconds.text ?? "")
@@ -140,8 +140,7 @@ class AddTimeViewController: UIViewController {
                 
                 timeStamps.append(newTime)
                 addToTotal(time: newTime, currentTotal: timeTotal)
-                
-                
+                print(timeStamps)
             }
         }
     }
@@ -160,9 +159,13 @@ class AddTimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaultObject = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: 0, minutes: 0, seconds: 0)
+            timeStamps.append(defaultObject)
+            //entry -1
+        }
 
         // Do any additional setup after loading the view.
     }
     
 
-}
+
