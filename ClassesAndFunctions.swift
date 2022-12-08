@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-class TimeStamp {
+struct TimeStamp: Codable {
     var entryNumber: String
     
     var hours: Int
@@ -19,6 +19,7 @@ class TimeStamp {
         self.hours = hours
         self.minutes = minutes
         self.seconds = seconds
+    
     }
     
     

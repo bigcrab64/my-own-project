@@ -44,7 +44,6 @@ class AddTimeViewController: UIViewController {
         seconds.resignFirstResponder()
     }
     
-    
     @IBAction func resignButton2(_ sender: UIButton) {
         minutes.resignFirstResponder()
         seconds.resignFirstResponder()
@@ -86,7 +85,7 @@ class AddTimeViewController: UIViewController {
     
     var timeStamps: [TimeStamp] = []
     var timeTotal = total(hours: 0, minutes: 0, seconds: 0)
-    
+
     var toLog:[String: Array] = ["entryNumber": [1,2,3]]
     var entryCounter = -1
     
@@ -140,7 +139,6 @@ class AddTimeViewController: UIViewController {
                 
                 timeStamps.append(newTime)
                 addToTotal(time: newTime, currentTotal: timeTotal)
-                print(timeStamps)
             }
         }
     }
@@ -151,6 +149,10 @@ class AddTimeViewController: UIViewController {
         nvc.timeStamps = timeStamps
         nvc.totalTime = timeTotal
         
+               
+        
+        
+        
         
     }
     @IBAction func toTable(_ sender: UIButton) {
@@ -159,8 +161,7 @@ class AddTimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaultObject = TimeStamp(entryNumber: ("Entry:" + String(entryCounter)), hours: 0, minutes: 0, seconds: 0)
-            timeStamps.append(defaultObject)
+        
             //entry -1
         }
 
